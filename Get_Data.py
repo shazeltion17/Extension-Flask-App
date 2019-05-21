@@ -61,7 +61,7 @@ def get_data(symbol, hashvalue):
 
 
 def build_connection():
-    conn = psycopg2.connect(host="", dbname="", user="", password="")
+    conn = psycopg2.connect(host="tableaudatainstance.cotqt9fi7tuv.us-west-2.rds.amazonaws.com", dbname="postgres", user="Samuel", password="thecatranfast")
     cur = conn.cursor()
     # print cur
     return cur, conn
@@ -79,11 +79,11 @@ def run_sql(cur, conn, data):
 
 # Run this manually
 
-#symbol = 'BAC'
-#hashvalue = '1235'
-#data = get_data(symbol, hashvalue)
-#data = [tuple(x) for x in data.to_records(index=True)]
-#cur, conn = build_connection();
-#run_sql(cur, conn, data);
-
+# symbol = 'BAC'
+# hashvalue = '1235'
+# data = get_data(symbol, hashvalue)
+# data = [tuple(x) for x in data.to_records(index=True)]
+# cur, conn = build_connection();
+# run_sql(cur, conn, data);
+#
 

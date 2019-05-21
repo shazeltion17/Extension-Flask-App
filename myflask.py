@@ -2,14 +2,14 @@ from flask import Flask, render_template, request, jsonify
 from Get_Data import get_data, build_connection, run_sql
 import random
 import string
-from OpenSSL import SSL
+#from OpenSSL import SSL
 
 #First, create a flask class object we use to run our program
 app = Flask(__name__)
 
 ##This section defiles my SSL certs so that I correctlty can run HTTPS on my site.
 
-context = SSL.Context(SSL.SSLv23_METHOD)
+#context = SSL.Context(SSL.SSLv23_METHOD)
 cer = 'fireanalytics-dev.crt'
 key = 'testcert.key'
 
@@ -37,6 +37,6 @@ def add_numbers():
 
 if __name__=="__main__":
 	context = (cer,key)
-	app.run(host='0.0.0.0', port=5000, ssl_context=context)
+	app.run() #, ssl_context=context)
 #	app.run()
 #	app.run(host='0.0.0.0', port=5000)
